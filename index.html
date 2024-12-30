@@ -11,48 +11,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <div class="language-selector">
+        <button type="button" onclick="changeLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" onclick="changeLanguage('es')" class="lang-btn" data-lang="es">ES</button>
+    </div>
+
     <div class="container">
         <header>
             <h1>Omar Méndez Andrade</h1>
-            <p class="subtitle">Data Scientist | GCP Professional Data Engineer in progress</p>
+            <p class="subtitle" data-en="Data Scientist | GCP Professional Data Engineer in progress" data-es="Científico de Datos | GCP Professional Data Engineer en progreso"></p>
         </header>
 
         <section class="about">
-            <h2><i class="fas fa-user"></i> About me</h2>
-            <p>Data scientist experienced in leveraging AI and machine learning to drive business value. Passionate about transforming complex data into actionable insights and building scalable solutions.</p>
+            <h2><i class="fas fa-user"></i> <span data-en="About me" data-es="Sobre mí"></span></h2>
+            <p data-en="Data scientist experienced in leveraging AI and machine learning to drive business value. Passionate about transforming complex data into actionable insights and building scalable solutions." 
+               data-es="Científico de datos con experiencia en el aprovechamiento de IA y machine learning para generar valor empresarial. Apasionado por transformar datos complejos en información accionable y construir soluciones escalables."></p>
         </section>
 
         <section class="skills">
-            <h2><i class="fas fa-tools"></i> Skills</h2>
+            <h2><i class="fas fa-tools"></i> <span data-en="Skills" data-es="Habilidades"></span></h2>
             <ul>
-                <li>Data Science & Machine Learning</li>
+                <li data-en="Data Science & Machine Learning" data-es="Ciencia de Datos & Machine Learning"></li>
                 <li>Google Cloud Platform (GCP)</li>
                 <li>Python</li>
                 <li>Data Visualization (Looker, Looker Studio, Power BI, Tableau)</li>
-                <li>Big Data Analytics</li>
-                <li>Statistical Analysis</li>
+                <li data-en="Big Data Analytics" data-es="Análisis de Big Data"></li>
+                <li data-en="Statistical Analysis" data-es="Análisis Estadístico"></li>
                 <li>SQL</li>
             </ul>
         </section>
 
         <section class="certifications">
-            <h2><i class="fas fa-certificate"></i> Certifications</h2>
+            <h2><i class="fas fa-certificate"></i> <span data-en="Certifications" data-es="Certificaciones"></span></h2>
             <ul>
-                <li>Google Cloud Professional Data Engineer (In Progress)</li>
+                <li data-en="Google Cloud Professional Data Engineer (In Progress)" data-es="Google Cloud Professional Data Engineer (En Progreso)"></li>
                 <li>Google Cloud Associate Cloud Engineer</li>
                 <li>Machine Learning Specialization - Coursera</li>
             </ul>
         </section>
 
         <section class="experience">
-            <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+            <h2><i class="fas fa-briefcase"></i> <span data-en="Work Experience" data-es="Experiencia Laboral"></span></h2>
             <div class="job">
                 <h3>Data Scientist - DEACERO</h3>
                 <p class="job-period">2021 - Present</p>
                 <ul>
-                    <li>Lead data science initiatives and ML projects</li>
-                    <li>Develop and maintain data pipelines</li>
-                    <li>Implement cloud-based solutions</li>
+                    <li data-en="Lead data science initiatives and ML projects" data-es="Liderar iniciativas de ciencia de datos y proyectos de ML"></li>
+                    <li data-en="Develop and maintain data pipelines" data-es="Desarrollar y mantener pipelines de datos"></li>
+                    <li data-en="Implement cloud-based solutions" data-es="Implementar soluciones basadas en la nube"></li>
                 </ul>
             </div>
         </section>
@@ -61,7 +67,7 @@
             <h2><i class="fas fa-layer-group"></i> Tech Stack</h2>
             <div class="tech-categories">
                 <div class="tech-category">
-                    <h3>Cloud & Infrastructure</h3>
+                    <h3 data-en="Cloud & Infrastructure" data-es="Nube & Infraestructura"></h3>
                     <ul>
                         <li>Google Cloud Platform</li>
                         <li>Docker</li>
@@ -69,7 +75,7 @@
                     </ul>
                 </div>
                 <div class="tech-category">
-                    <h3>Languages & Frameworks</h3>
+                    <h3 data-en="Languages & Frameworks" data-es="Lenguajes & Frameworks"></h3>
                     <ul>
                         <li>Python (Pandas, NumPy, Scikit-learn)</li>
                         <li>SQL</li>
@@ -80,56 +86,60 @@
         </section>
 
         <section class="publications">
-            <h2><i class="fas fa-book"></i> Publications & Talks</h2>
+            <h2><i class="fas fa-book"></i> <span data-en="Publications & Talks" data-es="Publicaciones & Charlas"></span></h2>
             <ul>
-                <li>Technical blog posts</li>
-                <li>Conference presentations</li>
-                <li>Research papers</li>
+                <li data-en="Technical blog posts" data-es="Posts técnicos del blog"></li>
+                <li data-en="Conference presentations" data-es="Presentaciones en conferencias"></li>
+                <li data-en="Research papers" data-es="Artículos de investigación"></li>
             </ul>
         </section>
 
         <section class="blog">
-            <h2><i class="fas fa-pen-fancy"></i> Latest Blog Posts</h2>
+            <h2><i class="fas fa-pen-fancy"></i> <span data-en="Latest Blog Posts" data-es="Últimas Publicaciones"></span></h2>
             <div class="blog-posts">
                 <article class="blog-post">
-                    <h3>Understanding Data Pipelines in GCP</h3>
+                    <h3 data-en="Understanding Data Pipelines in GCP" data-es="Entendiendo Data Pipelines en GCP"></h3>
                     <div class="post-meta">
                         <span class="post-date">March 15, 2024</span>
                         <span class="post-category">Cloud</span>
                     </div>
-                    <p>An overview of building efficient data pipelines using Google Cloud Platform services...</p>
-                    <a href="blog/data-pipelines-gcp.html" class="read-more">Read More</a>
+                    <p data-en="An overview of building efficient data pipelines using Google Cloud Platform services..." 
+                       data-es="Una visión general sobre la construcción de pipelines de datos eficientes usando servicios de Google Cloud Platform..."></p>
+                    <a href="blog/data-pipelines-gcp.html" class="read-more" data-en="Read More about Data Pipelines" data-es="Leer más sobre Data Pipelines"></a>
                 </article>
 
                 <article class="blog-post">
-                    <h3>Machine Learning Best Practices</h3>
+                    <h3 data-en="Machine Learning Best Practices" data-es="Mejores Prácticas de Machine Learning"></h3>
                     <div class="post-meta">
                         <span class="post-date">March 1, 2024</span>
                         <span class="post-category">ML</span>
                     </div>
-                    <p>Key considerations and best practices when developing machine learning models...</p>
-                    <a href="blog/ml-best-practices.html" class="read-more">Read More</a>
+                    <p data-en="Key considerations and best practices when developing machine learning models..." 
+                       data-es="Consideraciones clave y mejores prácticas al desarrollar modelos de machine learning..."></p>
+                    <a href="blog/ml-best-practices.html" class="read-more" data-en="Read More about ML Best Practices" data-es="Leer más sobre Mejores Prácticas de ML"></a>
                 </article>
             </div>
-            <a href="blog/index.html" class="view-all">View All Posts</a>
+            <a href="blog/index.html" class="view-all" data-en="View All Blog Posts" data-es="Ver Todas las Publicaciones del Blog"></a>
         </section>
 
         <section class="projects">
-            <h2><i class="fas fa-rocket"></i> Featured Projects</h2>
+            <h2><i class="fas fa-rocket"></i> <span data-en="Featured Projects" data-es="Proyectos Destacados"></span></h2>
             <div class="project">
-                <h3>Know Your Customer Platform</h3>
-                <p>Development of a platform to understand customer behavior and facilitate decision making</p>
+                <h3 data-en="Know Your Customer Platform" data-es="Plataforma Know Your Customer"></h3>
+                <p data-en="Development of a platform to understand customer behavior and facilitate decision making" 
+                   data-es="Desarrollo de una plataforma para entender el comportamiento del cliente y facilitar la toma de decisiones"></p>
             </div>
             <div class="project">
-                <h3>Time Series Forecasting</h3>
-                <p>Development of a product price suggestion system using forecasting models</p>
+                <h3 data-en="Time Series Forecasting" data-es="Pronóstico de Series de Tiempo"></h3>
+                <p data-en="Development of a product price suggestion system using forecasting models" 
+                   data-es="Desarrollo de un sistema de sugerencia de precios de productos usando modelos de pronóstico"></p>
             </div>
         </section>
 
         <section class="education">
-            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-            <p><strong>B.S. in Geophysical Engineering</strong><br>
-            Faculty of Engineering, UNAM (2010-2016)</p>
+            <h2><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-es="Educación"></span></h2>
+            <p><strong data-en="B.S. in Geophysical Engineering" data-es="Ingeniería Geofísica"></strong><br>
+            <span data-en="Faculty of Engineering, UNAM (2010-2016)" data-es="Facultad de Ingeniería, UNAM (2010-2016)"></span></p>
         </section>
 
         <footer>
@@ -141,5 +151,33 @@
             </a>
         </footer>
     </div>
+
+    <script>
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-en], [data-es]').forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (element.tagName === 'A') {
+                        // Para links, solo actualizamos el texto interno
+                        element.textContent = text;
+                    } else {
+                        element.innerHTML = text;
+                    }
+                }
+            });
+
+            // Actualizar los botones de idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            // Actualizar el atributo lang del HTML
+            document.documentElement.lang = lang;
+        }
+
+        // Detectar el idioma preferido del navegador
+        const userLang = navigator.language || navigator.userLanguage;
+        changeLanguage(userLang.startsWith('es') ? 'es' : 'en');
+    </script>
 </body>
 </html> 

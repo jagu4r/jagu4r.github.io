@@ -269,4 +269,32 @@ footer {
     margin-top: 2rem;
     font-size: 1.1rem;
     line-height: 1.8;
+}
+
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 8px;
+}
+
+.lang-btn {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: #34495e;
+}
+
+.lang-btn.active {
+    background: #3498db;
 } 

@@ -4,25 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Understanding Data Pipelines in GCP - Omar Méndez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <div class="language-selector">
+        <button type="button" onclick="changeLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" onclick="changeLanguage('es')" class="lang-btn" data-lang="es">ES</button>
+    </div>
+
     <div class="container blog-content">
-        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
-        
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            <span data-en="Back to Blog" data-es="Volver al Blog"></span>
+        </a>
+
         <article>
-            <h1>Understanding Data Pipelines in GCP</h1>
-            <div class="post-meta">
-                <span class="post-date">March 15, 2024</span>
-                <span class="post-category">Cloud</span>
-            </div>
-            
+            <header>
+                <h1 data-en="Understanding Data Pipelines in GCP" 
+                    data-es="Entendiendo Data Pipelines en GCP"></h1>
+                <div class="post-meta">
+                    <span class="post-date">March 15, 2024</span>
+                    <span class="post-category">Cloud</span>
+                </div>
+            </header>
+
             <div class="post-content">
-                <p>Full blog post content goes here...</p>
-                <!-- Add your blog content here -->
+                <p data-en="In today's data-driven world, building efficient and scalable data pipelines is crucial for any organization. Google Cloud Platform (GCP) offers a robust set of tools and services that make this task more manageable and efficient." 
+                   data-es="En el mundo actual impulsado por datos, construir pipelines de datos eficientes y escalables es crucial para cualquier organización. Google Cloud Platform (GCP) ofrece un conjunto robusto de herramientas y servicios que hacen esta tarea más manejable y eficiente."></p>
+
+                <h2 data-en="What is a Data Pipeline?" data-es="¿Qué es un Data Pipeline?"></h2>
+                <p data-en="A data pipeline is a series of data processing steps. Data pipelines typically handle tasks like:" 
+                   data-es="Un data pipeline es una serie de pasos de procesamiento de datos. Los data pipelines típicamente manejan tareas como:"></p>
+                <ul>
+                    <li data-en="Data extraction from various sources" data-es="Extracción de datos de varias fuentes"></li>
+                    <li data-en="Data transformation and cleaning" data-es="Transformación y limpieza de datos"></li>
+                    <li data-en="Data loading into storage systems" data-es="Carga de datos en sistemas de almacenamiento"></li>
+                    <li data-en="Data analysis and visualization" data-es="Análisis y visualización de datos"></li>
+                </ul>
+
+                <h2 data-en="Key GCP Services for Data Pipelines" data-es="Servicios Clave de GCP para Data Pipelines"></h2>
+                <ul>
+                    <li>
+                        <strong>Cloud Storage</strong>
+                        <p data-en="Object storage for any type of data" data-es="Almacenamiento de objetos para cualquier tipo de datos"></p>
+                    </li>
+                    <li>
+                        <strong>Cloud Dataflow</strong>
+                        <p data-en="Fully managed service for executing Apache Beam pipelines" data-es="Servicio totalmente administrado para ejecutar pipelines de Apache Beam"></p>
+                    </li>
+                    <li>
+                        <strong>BigQuery</strong>
+                        <p data-en="Serverless, highly scalable data warehouse" data-es="Data warehouse serverless altamente escalable"></p>
+                    </li>
+                    <li>
+                        <strong>Cloud Composer</strong>
+                        <p data-en="Managed Apache Airflow service for workflow orchestration" data-es="Servicio administrado de Apache Airflow para orquestación de flujos de trabajo"></p>
+                    </li>
+                </ul>
+
+                <h2 data-en="Best Practices" data-es="Mejores Prácticas"></h2>
+                <ol>
+                    <li data-en="Design for scalability from the start" data-es="Diseñar para la escalabilidad desde el inicio"></li>
+                    <li data-en="Implement proper error handling and monitoring" data-es="Implementar manejo de errores y monitoreo adecuado"></li>
+                    <li data-en="Use automated testing for data quality" data-es="Usar pruebas automatizadas para la calidad de datos"></li>
+                    <li data-en="Document your pipeline architecture and processes" data-es="Documentar la arquitectura y procesos del pipeline"></li>
+                </ol>
             </div>
         </article>
+
+        <footer>
+            <a href="https://www.linkedin.com/in/omarmendezandrade/" class="social-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/jagu4r" class="social-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </footer>
     </div>
+
+    <script>
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-en], [data-es]').forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (element.tagName === 'A') {
+                        // Para links, solo actualizamos el texto interno
+                        element.textContent = text;
+                    } else {
+                        element.innerHTML = text;
+                    }
+                }
+            });
+
+            // Actualizar los botones de idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            // Actualizar el atributo lang del HTML
+            document.documentElement.lang = lang;
+        }
+
+        // Detectar el idioma preferido del navegador
+        const userLang = navigator.language || navigator.userLanguage;
+        changeLanguage(userLang.startsWith('es') ? 'es' : 'en');
+    </script>
 </body>
 </html> 

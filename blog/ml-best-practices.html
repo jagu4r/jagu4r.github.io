@@ -4,25 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machine Learning Best Practices - Omar Méndez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <div class="language-selector">
+        <button type="button" onclick="changeLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" onclick="changeLanguage('es')" class="lang-btn" data-lang="es">ES</button>
+    </div>
+
     <div class="container blog-content">
-        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
-        
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            <span data-en="Back to Blog" data-es="Volver al Blog"></span>
+        </a>
+
         <article>
-            <h1>Machine Learning Best Practices</h1>
-            <div class="post-meta">
-                <span class="post-date">March 1, 2024</span>
-                <span class="post-category">ML</span>
-            </div>
-            
+            <header>
+                <h1 data-en="Machine Learning Best Practices" 
+                    data-es="Mejores Prácticas de Machine Learning"></h1>
+                <div class="post-meta">
+                    <span class="post-date">March 1, 2024</span>
+                    <span class="post-category">ML</span>
+                </div>
+            </header>
+
             <div class="post-content">
-                <p>Full blog post content goes here...</p>
-                <!-- Add your blog content here -->
+                <p data-en="Building effective machine learning models requires more than just understanding algorithms. It's about following best practices throughout the entire ML lifecycle to ensure your models are robust, reliable, and provide real business value." 
+                   data-es="Construir modelos efectivos de machine learning requiere más que solo entender algoritmos. Se trata de seguir las mejores prácticas durante todo el ciclo de vida de ML para asegurar que tus modelos sean robustos, confiables y proporcionen valor real al negocio."></p>
+
+                <h2 data-en="Data Preparation" data-es="Preparación de Datos"></h2>
+                <ul>
+                    <li data-en="Clean and validate your data thoroughly" data-es="Limpia y valida tus datos minuciosamente"></li>
+                    <li data-en="Handle missing values appropriately" data-es="Maneja los valores faltantes de manera apropiada"></li>
+                    <li data-en="Document data preprocessing steps" data-es="Documenta los pasos de preprocesamiento de datos"></li>
+                    <li data-en="Implement proper data versioning" data-es="Implementa un versionado adecuado de datos"></li>
+                </ul>
+
+                <h2 data-en="Model Development" data-es="Desarrollo del Modelo"></h2>
+                <ul>
+                    <li data-en="Start with simple models before complex ones" data-es="Comienza con modelos simples antes de los complejos"></li>
+                    <li data-en="Use cross-validation effectively" data-es="Usa validación cruzada de manera efectiva"></li>
+                    <li data-en="Monitor for overfitting and underfitting" data-es="Monitorea el sobreajuste y subajuste"></li>
+                    <li data-en="Keep track of experiments and results" data-es="Mantén un registro de experimentos y resultados"></li>
+                </ul>
+
+                <h2 data-en="Model Evaluation" data-es="Evaluación del Modelo"></h2>
+                <p data-en="Choose appropriate metrics based on your business problem:" 
+                   data-es="Elige métricas apropiadas basadas en tu problema de negocio:"></p>
+                <ul>
+                    <li data-en="Classification: Accuracy, Precision, Recall, F1-Score" data-es="Clasificación: Exactitud, Precisión, Recall, F1-Score"></li>
+                    <li data-en="Regression: MSE, MAE, R-squared" data-es="Regresión: MSE, MAE, R-cuadrado"></li>
+                    <li data-en="Ranking: NDCG, MAP" data-es="Ranking: NDCG, MAP"></li>
+                </ul>
+
+                <h2 data-en="Model Deployment" data-es="Despliegue del Modelo"></h2>
+                <ol>
+                    <li data-en="Implement proper model versioning" data-es="Implementa un versionado adecuado del modelo"></li>
+                    <li data-en="Set up monitoring for model performance" data-es="Configura monitoreo para el rendimiento del modelo"></li>
+                    <li data-en="Plan for model updates and retraining" data-es="Planifica actualizaciones y reentrenamiento del modelo"></li>
+                    <li data-en="Document deployment procedures" data-es="Documenta los procedimientos de despliegue"></li>
+                </ol>
+
+                <h2 data-en="Common Pitfalls to Avoid" data-es="Errores Comunes a Evitar"></h2>
+                <ul>
+                    <li data-en="Data leakage during preprocessing" data-es="Fuga de datos durante el preprocesamiento"></li>
+                    <li data-en="Insufficient testing of the entire pipeline" data-es="Pruebas insuficientes del pipeline completo"></li>
+                    <li data-en="Ignoring edge cases in production" data-es="Ignorar casos extremos en producción"></li>
+                    <li data-en="Poor documentation practices" data-es="Malas prácticas de documentación"></li>
+                </ul>
             </div>
         </article>
+
+        <footer>
+            <a href="https://www.linkedin.com/in/omarmendezandrade/" class="social-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/jagu4r" class="social-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </footer>
     </div>
+
+    <script>
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-en], [data-es]').forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (element.tagName === 'A') {
+                        // Para links, solo actualizamos el texto interno
+                        element.textContent = text;
+                    } else {
+                        element.innerHTML = text;
+                    }
+                }
+            });
+
+            // Actualizar los botones de idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            // Actualizar el atributo lang del HTML
+            document.documentElement.lang = lang;
+        }
+
+        // Detectar el idioma preferido del navegador
+        const userLang = navigator.language || navigator.userLanguage;
+        changeLanguage(userLang.startsWith('es') ? 'es' : 'en');
+    </script>
 </body>
 </html> 
