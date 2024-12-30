@@ -1,0 +1,107 @@
+:root {
+    --text-color: #FFFFFC;
+    --background-color: #242526;
+    --accent-color: #FFFFFC;
+}
+
+::selection {
+    background: var(--text-color);
+    color: var(--background-color);
+}
+
+body {
+    font-family: 'Fira Code', 'Space Mono', monospace;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+}
+
+.subtitle {
+    color: #FFFFFC;
+    margin: 0;
+}
+
+section {
+    margin: 3rem 0;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skills li {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid #FFFFFC;
+    border-radius: 15px;
+}
+
+.project {
+    margin-bottom: 2rem;
+}
+
+.project h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+footer {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.social-link {
+    color: #FFFFFC;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    color: #242424;
+    background: #FFFFFC;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+} 
